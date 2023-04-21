@@ -1,0 +1,380 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMpGIlqnFtWcE6tgz2DXKuY",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/IarleyAndre/1-AULA-PROGRAMA-O/blob/main/aulaPython.5\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Jogo adivinhe o número\n",
+        "#Desenvolva um jogo de adivinhação que siga as seguintes regras:\n",
+        "#1 - O jogo gera, aleatoriamente, um número secreto do tipo inteiro entre 0 e 100\n",
+        "#2 - Solicita ao usuário que tente adivinhar o número entre 0 e 100.\n",
+        "#3 - Um laço verifica se o número digitado é igual ao número secreto\n",
+        "#4 - Se o número digitado for menor que o número secreto, o valor mínimo passa a ser o número digitado\n",
+        "#5 - Se o número digitado for maior que o número secreto, o valor máximo passa a ser o número digitado\n",
+        "#6 - se o jogador acertar, recebe uma mensagem de parabéns e o número de tentativas que foi necessária.\n",
+        "###Para gerar inteiros aleatórios, importe from random import * e use a função randint()\n",
+        "     \n",
+        "\n",
+        "\n",
+        "import random \n",
+        "\n",
+        "num = random.randrange(101)\n",
+        "minimo = 0\n",
+        "maxima = 100\n",
+        "pitaco = int(input(f\"Adivinhe o numero entre {minimo} e {maxima} \"))\n",
+        "cont = 1\n",
+        "\n",
+        "while( num != pitaco):\n",
+        "  if(pitaco > num ):\n",
+        "    maxima = pitaco\n",
+        "  else:\n",
+        "    minimo = pitaco \n",
+        "  pitaco = int(input(f\"Adivinhe o numero entre {minimo} e {maxima} \"))   \n",
+        "  cont+=1 \n",
+        "\n",
+        "print(f\"Acertou, {cont} tentativas\")"
+      ],
+      "metadata": {
+        "id": "SvzL0dnJwC7a"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def primeirafuncao():\n",
+        "  print('------------------------')\n",
+        "\n",
+        "primeirafuncao()\n",
+        "\n",
+        "print(\" minha primeira função\")\n",
+        "print('-----------------------')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tRnB-3nE2F4W",
+        "outputId": "585a865c-b8cc-4d72-a872-5a513e5919be"
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "------------------------\n",
+            " minha primeira função\n",
+            "-----------------------\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def pronomeTratam(pronome):\n",
+        "  print(pronome, \" iarley\")\n",
+        "  "
+      ],
+      "metadata": {
+        "id": "q4283SwS4U2O"
+      },
+      "execution_count": 36,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pronomeTratam('Doutor')\n",
+        "pronomeTratam(\"Estuda\")\n",
+        "pronomeTratam(\"seu\")\n",
+        "pronomeTratam"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kqKvy1bC4rxR",
+        "outputId": "a0f472fc-3719-4743-cea3-1b38818d70c2"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Doutor  iarley\n",
+            "Estuda  iarley\n",
+            "seu  iarley\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<function __main__.pronomeTratam(pronome)>"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 40
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#uma funçao deve ser chamada com o numero certinho de argumentos \n",
+        "\n",
+        "def boasVindas( nome, cargo):\n",
+        "   print(f'Ola,  {cargo} {nome}')"
+      ],
+      "metadata": {
+        "id": "N8VHfMoP6Ct5"
+      },
+      "execution_count": 42,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "boasVindas ('iarley' , \"Medico\")\n",
+        "boasVindas (\" iarley \" , \"Engenheiro\")\n",
+        "boasVindas (\"dar o bumbum\" , \" tiago\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MzAvG_Ku6Cyb",
+        "outputId": "4a4e8c26-e7ca-4ca5-c866-f5d530ab9249"
+      },
+      "execution_count": 44,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ola,  Medico iarley\n",
+            "Ola,  Engenheiro  iarley \n",
+            "Ola,   tiago dar o bumbum\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def funcaoSemNome(nome, anoNascimento):\n",
+        "   idade = 2023 - anoNascimento\n",
+        "   print(nome, idade)"
+      ],
+      "metadata": {
+        "id": "IfkOS3WZ7soj"
+      },
+      "execution_count": 45,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "funcaoSemNome('iarley' , 2005)\n",
+        "              "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DQcIlQdq8JV2",
+        "outputId": "dd8157c5-f196-4dc0-d2fb-6047daa6366c"
+      },
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "iarley 18\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#def e funçção\n",
+        "\n",
+        "def somaNotas(*notas):\n",
+        "  soma= 0\n",
+        "  for n in notas:\n",
+        "    soma+= n\n",
+        "  print(soma*n)\n",
+        "  print(soma /len(notas))"
+      ],
+      "metadata": {
+        "id": "ydBbSv1_8jWf"
+      },
+      "execution_count": 77,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "somaNotas(10,8,8,9,10)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "tz0RhK1498I4",
+        "outputId": "262f4154-0dcd-43fb-baa7-e6f5cbfe8995"
+      },
+      "execution_count": 80,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "450\n",
+            "9.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#valor de parametro\n",
+        "def nacionalidade(country = 'china'):\n",
+        "  print(\"nasci em:\" +country)\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "_piwxhvBAwHM"
+      },
+      "execution_count": 81,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def imc(peso, altura):\n",
+        "   return peso/altura**2\n",
+        "\n",
+        "imc (77, 1.73) \n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GeDXmydnCZax",
+        "outputId": "ef9ef5a3-7911-4726-eaed-e4b3e4ca2194"
+      },
+      "execution_count": 88,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "25.727555214006482"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 88
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def sitacaoPeso(imc):\n",
+        "  if(imc , 18.5):\n",
+        "    print('abaixo do peso normal')\n",
+        "    "
+      ],
+      "metadata": {
+        "id": "UpzgrF5eDvzH"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "#soma\n",
+        "def soma(a, b):\n",
+        "  return a + b\n",
+        "\n",
+        " #subitracao = (a - b)\n",
+        "def subitracao(a,b):\n",
+        " return a - b\n",
+        "\n",
+        " #miltiplicacao = ( a * b)\n",
+        "def multiplicacao(a,b):\n",
+        "  return a * b\n",
+        "\n",
+        " #divisao = ( a / b)\n",
+        "def divisao(a,b):\n",
+        "   return a / b\n",
+        "\n",
+        "a = int(input(\"digite o primeiro numero\"))\n",
+        "b = int(input('digite o segundo numero'))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iLjBmphcEpdZ",
+        "outputId": "b9afd2b3-3524-4919-c7ee-cebd0dfcce9c"
+      },
+      "execution_count": 94,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "digite o primeiro numero14\n",
+            "digite o segundo numero10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "LdGQZGQqE1oS"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
